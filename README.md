@@ -1,29 +1,25 @@
-/* ------------------------------------------------------------------ */
-   			Address Book | OmniUpdate Test Documentation
- ------------------------------------------------------------------ */
-
+Address Book | OmniUpdate Test Documentation
+------------------------------------------------------------------
 Address Book v1.0.1
 
-/* ------------------------------------------------------------------ */
-   					Frameworks and Libraries Used
- ------------------------------------------------------------------ */
+Frameworks and Libraries Used
+------------------------------------------------------------------
 
-Frameworks Used:
 	1. Bootstrap v3.3.5
 	2. AngularJS v1.3.14
 
-/* ------------------------------------------------------------------ */
-   						Application Files
- ------------------------------------------------------------------ */
+
+Application Files
+ ------------------------------------------------------------------
 
  	1. /index.html --> HTML5 code for the UI.
  	2. /assets/css/addressBook.css --> CSS code for the User Interface.
  	3. /assets/js/app.js --> AngulasJS code which works with the API and performs required front end tasks.
  	4. /assets/filters/phone-filter.js --> AngulasJS custome filter which reformats the phone number as (nnn) nnn-nnnn in all views.
 
-/* ------------------------------------------------------------------ */
-   						Requirements Finished
- ------------------------------------------------------------------ */
+
+Requirements Finished
+ ------------------------------------------------------------------
 
 	1. Application gets the contacts from the back end and presents them as a list in a table format on the front end. The list displays all the entries while filling out the form in a proper table format created using bootstrap.
 
@@ -42,10 +38,9 @@ Frameworks Used:
 	8. Application reformats the phone number as (nnn) nnn-nnnn in all views. I have worked on a custom AngularJS filter to provide that functionality.
 
 
-/* ------------------------------------------------------------------ */
-   						Requirements in Progress
- ------------------------------------------------------------------ */
-Requirements not fulfilled:
+
+Requirements in Progress
+ ------------------------------------------------------------------
 	1. Application currently does not support multiple deletion at a same time. That is a feature I am currently working on.
 	2. Having some problems in loading the gravatar of the user as per his email address. Having difficulties in solving the problem of appending the hash code of the email as a prefix to the gravatar image link.
 
