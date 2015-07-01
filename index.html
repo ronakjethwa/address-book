@@ -1,0 +1,319 @@
+<!doctype html>
+<!-- AngularJS Application Starts -->
+<html lang="en" ng-app="addressBook">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Address Book | OmniUpdate Test</title>
+
+    <link rel="icon" type="image/ico" href="images/favicon.ico" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/addressbook.css">
+
+</head>
+
+<!-- AngularJS Application Controller -->
+
+<body ng-controller="MainCtrl">
+
+    <!-- Navigation Bar -->
+    <div class="container">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Navigation Header -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Address Book</a>
+                </div>
+
+                <div class="nav navbar-nav navbar-right input-group">
+                    <!-- Search Bar -->
+                    <input ng-model="searchText.$" class="search" type="search" placeholder="Search" name="search" />
+                    <!-- Add Contact Button -->
+                    <button title="Add new Contact" class="quickAdd" href="#contact" data-toggle="modal">+</button>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+    <!-- End of Navigation Bar -->
+
+    <!-- Contacts List View -->
+    <div class="container">
+        <!-- Content-->
+        <div class="row">
+            <div class="table-responsive">
+                <!-- Table -->
+                <table class="col-md-12 table">
+                    <tbody>
+                        <!-- Table Header Rows -->
+                        <tr>
+                            <th><a href="" ng-click="orderByField='firstName'; reverseSort = !reverseSort">First Name</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='lastName'; reverseSort = !reverseSort">Last Name</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='email'; reverseSort = !reverseSort">Email</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='phone'; reverseSort = !reverseSort">Phone</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='address'; reverseSort = !reverseSort">Address 1</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='address2'; reverseSort = !reverseSort">Address 2</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='city'; reverseSort = !reverseSort">City</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='state'; reverseSort = !reverseSort">State</a>
+                            </th>
+                            <th><a href="" ng-click="orderByField='zipcode'; reverseSort = !reverseSort">Zipcode</a>
+                            </th>
+                            <th><a>Actions</a>
+                            </th>
+                        </tr>
+                        <!-- End of Table Header Row -->
+
+                        <tr class="entry" ng-repeat="entry in list | filter:searchText | orderBy:orderByField:reverseSort">
+
+                            <!-- Firstname Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]">
+                                    <p>{{entry.firstName}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.firstName" />
+                                </div>
+                            </td>
+
+                            <!-- Lastname Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="name">
+                                    <p>{{entry.lastName}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.lastName" />
+                                </div>
+                            </td>
+
+                            <!-- Email Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="email">
+                                    <p>{{entry.email}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.email" />
+                                </div>
+                            </td>
+
+                            <!-- Phone Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="phone">
+                                    <p>{{entry.phone | tel}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.phone" />
+                                </div>
+                            </td>
+
+                            <!-- Address Line 1 Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="address">
+                                    <p>{{entry.address}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.address" />
+                                </div>
+                            </td>
+
+                            <!-- Address Line 2 Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="address2">
+                                    <p>{{entry.address2}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.address2" />
+                                </div>
+                            </td>
+
+                            <!-- City Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="city">
+                                    <p>{{entry.city}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.city" />
+                                </div>
+                            </td>
+
+                            <!-- State Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="state">
+                                    <p>{{entry.state}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.state" />
+                                </div>
+                            </td>
+
+                            <!-- Zipcode Entry -->
+                            <td>
+                                <div ng-hide="editingData[entry.id]" class="zipcode">
+                                    <p>{{entry.zipcode}}</p>
+                                </div>
+                                <div ng-show="editingData[entry.id]">
+                                    <input class="col-md-1" type="text" ng-model="entry.zipcode" />
+                                </div>
+                            </td>
+
+                            <!-- Editing Buttons on the List View -->
+                            <td class="btn-group" role="group">
+                                <button title="Edit" ng-hide="editingData[entry.id]" ng-click="modify(entry)" class="del btn">
+                                    <a href="#" class="glyphicon glyphicon-pencil"></a>
+                                </button>
+                                <button title="Update" ng-show="editingData[entry.id]" ng-click="update(entry)" class="del btn">
+                                    <a href="#" class="glyphicon glyphicon-ok"></a>
+                                </button>
+                                <button title="Delete" ng-hide="editingData[entry.id]" ng-click="removeRow(entry)" class="del btn">
+                                    <a href="#" class="glyphicon glyphicon-remove"></a>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- End of Table -->
+            </div>
+        </div>
+    </div>
+    <!-- End of Contacts List View -->
+
+    <!-- Modal Box Form -->
+    <div class="container">
+        <div class="modal fade" id="contact" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form name="userForm" id="commentForm" class="form-horizontal" novalidate>
+                        <div class="modal-header">
+                            <h4 ng-bind="contactFormName"></h4>
+                        </div>
+                        <div class="modal-body has-success has-feedback">
+                            <div class="form-group">
+
+                                <!-- First Name -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+                                        <label class="control-label">First Name</label>
+                                        <input type="text" name="firstName" class="form-control" ng-model="firstName" required>
+                                        <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block">First Name is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
+                                        <label class="control-label">Last Name</label>
+                                        <input type="text" name="lastName" class="form-control" ng-model="lastName" required>
+                                        <p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block">Last Name is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                                        <label class="control-label">Phone</label>
+                                        <input type="text" name="phone" class="form-control" ng-model="phone" ng-pattern="/((\([0-9]{3}\))|[0-9]{3})([-. ]{0,1}[0-9]{3})([-. ]{0,1}[0-9]{4})/g" placeholder="(XXX) XXX-XXXX" required>
+                                        <p ng-show="userForm.phone.$error.pattern" class="help-block">Phone number is not valid.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Address 1 -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.address.$invalid && !userForm.address.$pristine }">
+                                        <label class="control-label">Address Line 1</label>
+                                        <input type="text" name="address" class="form-control" ng-model="address" placeholder="123 First Street" required>
+                                        <p ng-show="userForm.address.$invalid && !userForm.address.$pristine" class="help-block">Address Line 1 is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Address 2 -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.address2.$invalid && !userForm.address2.$pristine }">
+                                        <label class="control-label">Address Line 2</label>
+                                        <input type="text" name="address2" class="form-control" ng-model="address2" placeholder="Apt 456" required>
+                                        <p ng-show="userForm.address2.$invalid && !userForm.address2.$pristine" class="help-block">Address Line 2 is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- City -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.city.$invalid && !userForm.city.$pristine }">
+                                        <label class="control-label">City</label>
+                                        <input type="text" name="city" class="form-control" ng-model="city" placeholder="Camarillo" required>
+                                        <p ng-show="userForm.city.$invalid && !userForm.city.$pristine" class="help-block">City is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- State -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.state.$invalid && !userForm.state.$pristine }">
+                                        <label class="control-label">State</label>
+                                        <input type="text" name="state" class="form-control" ng-model="state" placeholder="CA" required>
+                                        <p ng-show="userForm.state.$invalid && !userForm.state.$pristine" class="help-block">State is required.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Zipcode -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.zipcode.$invalid && !userForm.zipcode.$pristine }">
+                                        <label class="control-label">Zipcode</label>
+                                        <input type="text" name="zipcode" class="form-control" ng-model="zipcode" ng-minlength="5" ng-maxlength="5" placeholder="95110" required>
+                                        <p ng-show="userForm.zipcode.$error.minlength" class="help-block">Zipcode is too short.</p>
+                                        <p ng-show="userForm.zipcode.$error.maxlength" class="help-block">Zipcode is too long.</p>
+                                    </div>
+                                </div>
+
+                                <!-- EMAIL -->
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                                        <label class="control-label">Email</label>
+                                        <input type="email" name="email" class="form-control" ng-model="email" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" placeholder="name@domain.com" required>
+                                        <p ng-show="userForm.email.$error.pattern" class="help-block">Email is not valid.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="modal-footer">
+                            <!-- Modal Box Buttons -->
+                            <input class="btn btn-primary" ng-click="addBook()" data-dismiss="modal" type="submit" ng-disabled="userForm.$invalid" value="Add" />
+                            <input class="btn btn-default" data-dismiss="modal" type="reset" value="Cancel" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modal Box Form -->
+
+    <!-- JavaScript Files -->
+    <script src="assets/libs/angular.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/filters/phone-filter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Script to reset the Modal Box Form -->
+    <script>
+        $('.modal').on('hidden.bs.modal', function() {
+            $(this).find('form')[0].reset();
+        });
+    </script>
+
+</body>
+<!-- End of AngularJS Application Controller -->
+
+</html>
+<!-- AngularJS Application Ends -->

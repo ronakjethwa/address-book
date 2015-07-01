@@ -1,0 +1,133 @@
+{
+"result":[
+	{
+	"address1":"1320 Flynn Rd.",
+	"address2":"Suite 100",
+	"city":"Camarillo",
+	"email":"jane@doe.com",
+	"firstName":"Jane",
+	"id":"5LHtSuvqMj",
+	"lastName":"Doe",
+	"phone":"8055551234",
+	"state":"CA",
+	"zipcode":"93012"
+	},
+	
+	{
+	"address1":"1320 Flynn Rd.",
+	"address2":"Suite 100",
+	"city":"Camarillo",
+	"email":"john@doe.com",
+	"firstName":"John",
+	"id":"KufLsqx4ha",
+	"lastName":"Doe",
+	"phone":"8055555678",
+	"state":"CA",
+	"zipcode":"93012"
+	},
+	
+	{
+	"address1":"411 Park Ave",
+	"address2":"Apt 216",
+	"city":"San Jose",
+	"email":"ronakjethwa@gmail.com",
+	"firstName":"Ronak",
+	"id":"KufLszy4hb",
+	"lastName":"Jethwa",
+	"phone":"7147266501",
+	"state":"CA",
+	"zipcode":"95110"
+	},
+	
+	{
+	"address1":"1700 N Street",
+	"address2":"Suite 100",
+	"city":"Los Angeles",
+	"email":"maulik@doe.com",
+	"firstName":"Maulik",
+	"id":"AufBsqz4ha",
+	"lastName":"Fojdar",
+	"phone":"8055123678",
+	"state":"CA",
+	"zipcode":"95113"
+	},
+	
+	{
+	"address1":"411 Park Ave",
+	"address2":"Suite 100",
+	"city":"Camarillo",
+	"email":"tejas@doe.com",
+	"firstName":"Tejas",
+	"id":"FufLfhy4bq",
+	"lastName":"Patel",
+	"phone":"4805512682",
+	"state":"WA",
+	"zipcode":"12342"
+	},
+	
+	{
+	"address1":"415 Scott Ave",
+	"address2":"Suite 100",
+	"city":"Fullerton",
+	"email":"maitrik@doe.com",
+	"firstName":"Maitrik",
+	"id":"TufSscv8hj",
+	"lastName":"Patel",
+	"phone":"3455556767",
+	"state":"CA",
+	"zipcode":"94512"
+	},
+	
+	{
+	"address1":"600 Langsdorf Drive",
+	"address2":"Suite 100",
+	"city":"Fullerton",
+	"email":"bhargav@doe.com",
+	"firstName":"Bhargav",
+	"id":"UufLsqx2qt",
+	"lastName":"Donga",
+	"phone":"2135489678",
+	"state":"CA",
+	"zipcode":"90458"
+	},
+	
+	{
+	"address1":"25619 Prospect Ave",
+	"address2":"Suite 100",
+	"city":"Redlands",
+	"email":"parths@doe.com",
+	"firstName":"Parth",
+	"id":"EufNsqx7df",
+	"lastName":"Patel",
+	"phone":"7145527639",
+	"state":"CA",
+	"zipcode":"95378"
+	},
+	
+	{
+	"address1":"567 Prospect Ave",
+	"address2":"Suite 100",
+	"city":"Camarillo",
+	"email":"apurva@doe.com",
+	"firstName":"Apurva",
+	"id":"RufJsqx7gq",
+	"lastName":"Shah",
+	"phone":"4805548678",
+	"state":"CA",
+	"zipcode":"93012"
+	},
+	
+	{
+	"address1":"414 Baston Ave",
+	"address2":"Suite 100",
+	"city":"Santa Monica",
+	"email":"hardik@doe.com",
+	"firstName":"Hardik",
+	"id":"JjfLsqx3bd",
+	"lastName":"Shah",
+	"phone":"8123554678",
+	"state":"CA",
+	"zipcode":"93012"
+	}
+	]
+}
