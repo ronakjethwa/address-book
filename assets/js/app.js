@@ -10,7 +10,7 @@ angular.module('addressBook', []);
         $scope.sort = "Sort by";
         $scope.contactFormName = "New Contact";
         $scope.list = [];
-
+        
         $http.get("http://front-end.oudemo.com/api/address/list/?apikey=107c47bf-27f1-44f7-8c6c-b65d758aea23").
         success(function(response) {
             $scope.list = response.result;
