@@ -1,4 +1,4 @@
-# Address Book v1.0.1
+# Address Book
 
 ## Frameworks and Libraries Used
 
