@@ -52,7 +52,8 @@
                     <tbody>
                         <!-- Table Header Rows -->
                         <tr>
-                            <th><a href="" ng-click="orderByField='firstName'; reverseSort = !reverseSort">First Name</a>
+                            <th><a href="" ng-click="orderByField='firstName'; reverseSort = !reverseSort">First
+                                    Name</a>
                             </th>
                             <th><a href="" ng-click="orderByField='lastName'; reverseSort = !reverseSort">Last Name</a>
                             </th>
@@ -75,7 +76,8 @@
                         </tr>
                         <!-- End of Table Header Row -->
 
-                        <tr class="entry" ng-repeat="entry in list | filter:searchText | orderBy:orderByField:reverseSort">
+                        <tr class="entry"
+                            ng-repeat="entry in list | filter:searchText | orderBy:orderByField:reverseSort">
 
                             <!-- Firstname Entry -->
                             <td>
@@ -169,13 +171,16 @@
 
                             <!-- Editing Buttons on the List View -->
                             <td class="btn-group" role="group">
-                                <button title="Edit" ng-hide="editingData[entry.id]" ng-click="modify(entry)" class="del btn">
+                                <button title="Edit" ng-hide="editingData[entry.id]" ng-click="modify(entry)"
+                                    class="del btn">
                                     <a href="#" class="glyphicon glyphicon-pencil"></a>
                                 </button>
-                                <button title="Update" ng-show="editingData[entry.id]" ng-click="update(entry)" class="del btn">
+                                <button title="Update" ng-show="editingData[entry.id]" ng-click="update(entry)"
+                                    class="del btn">
                                     <a href="#" class="glyphicon glyphicon-ok"></a>
                                 </button>
-                                <button title="Delete" ng-hide="editingData[entry.id]" ng-click="removeRow(entry)" class="del btn">
+                                <button title="Delete" ng-hide="editingData[entry.id]" ng-click="removeRow(entry)"
+                                    class="del btn">
                                     <a href="#" class="glyphicon glyphicon-remove"></a>
                                 </button>
                             </td>
@@ -202,83 +207,113 @@
 
                                 <!-- First Name -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
                                         <label class="control-label">First Name</label>
-                                        <input type="text" name="firstName" class="form-control" ng-model="firstName" required>
-                                        <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="help-block">First Name is required.</p>
+                                        <input type="text" name="firstName" class="form-control" ng-model="firstName"
+                                            required>
+                                        <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine"
+                                            class="help-block">First Name is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- Last Name -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
                                         <label class="control-label">Last Name</label>
-                                        <input type="text" name="lastName" class="form-control" ng-model="lastName" required>
-                                        <p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="help-block">Last Name is required.</p>
+                                        <input type="text" name="lastName" class="form-control" ng-model="lastName"
+                                            required>
+                                        <p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine"
+                                            class="help-block">Last Name is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
                                         <label class="control-label">Phone</label>
-                                        <input type="text" name="phone" class="form-control" ng-model="phone" ng-pattern="/((\([0-9]{3}\))|[0-9]{3})([-. ]{0,1}[0-9]{3})([-. ]{0,1}[0-9]{4})/g" placeholder="(XXX) XXX-XXXX" required>
-                                        <p ng-show="userForm.phone.$error.pattern" class="help-block">Phone number is not valid.</p>
+                                        <input type="text" name="phone" class="form-control" ng-model="phone"
+                                            ng-pattern="/((\([0-9]{3}\))|[0-9]{3})([-. ]{0,1}[0-9]{3})([-. ]{0,1}[0-9]{4})/g"
+                                            placeholder="(XXX) XXX-XXXX" required>
+                                        <p ng-show="userForm.phone.$error.pattern" class="help-block">Phone number is
+                                            not valid.</p>
                                     </div>
                                 </div>
 
                                 <!-- Address 1 -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.address.$invalid && !userForm.address.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.address.$invalid && !userForm.address.$pristine }">
                                         <label class="control-label">Address Line 1</label>
-                                        <input type="text" name="address" class="form-control" ng-model="address" placeholder="123 First Street" required>
-                                        <p ng-show="userForm.address.$invalid && !userForm.address.$pristine" class="help-block">Address Line 1 is required.</p>
+                                        <input type="text" name="address" class="form-control" ng-model="address"
+                                            placeholder="123 First Street" required>
+                                        <p ng-show="userForm.address.$invalid && !userForm.address.$pristine"
+                                            class="help-block">Address Line 1 is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- Address 2 -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.address2.$invalid && !userForm.address2.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.address2.$invalid && !userForm.address2.$pristine }">
                                         <label class="control-label">Address Line 2</label>
-                                        <input type="text" name="address2" class="form-control" ng-model="address2" placeholder="Apt 456" required>
-                                        <p ng-show="userForm.address2.$invalid && !userForm.address2.$pristine" class="help-block">Address Line 2 is required.</p>
+                                        <input type="text" name="address2" class="form-control" ng-model="address2"
+                                            placeholder="Apt 456" required>
+                                        <p ng-show="userForm.address2.$invalid && !userForm.address2.$pristine"
+                                            class="help-block">Address Line 2 is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- City -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.city.$invalid && !userForm.city.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.city.$invalid && !userForm.city.$pristine }">
                                         <label class="control-label">City</label>
-                                        <input type="text" name="city" class="form-control" ng-model="city" placeholder="Camarillo" required>
-                                        <p ng-show="userForm.city.$invalid && !userForm.city.$pristine" class="help-block">City is required.</p>
+                                        <input type="text" name="city" class="form-control" ng-model="city"
+                                            placeholder="Camarillo" required>
+                                        <p ng-show="userForm.city.$invalid && !userForm.city.$pristine"
+                                            class="help-block">City is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- State -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.state.$invalid && !userForm.state.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.state.$invalid && !userForm.state.$pristine }">
                                         <label class="control-label">State</label>
-                                        <input type="text" name="state" class="form-control" ng-model="state" placeholder="CA" required>
-                                        <p ng-show="userForm.state.$invalid && !userForm.state.$pristine" class="help-block">State is required.</p>
+                                        <input type="text" name="state" class="form-control" ng-model="state"
+                                            placeholder="CA" required>
+                                        <p ng-show="userForm.state.$invalid && !userForm.state.$pristine"
+                                            class="help-block">State is required.</p>
                                     </div>
                                 </div>
 
                                 <!-- Zipcode -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.zipcode.$invalid && !userForm.zipcode.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.zipcode.$invalid && !userForm.zipcode.$pristine }">
                                         <label class="control-label">Zipcode</label>
-                                        <input type="text" name="zipcode" class="form-control" ng-model="zipcode" ng-minlength="5" ng-maxlength="5" placeholder="95110" required>
-                                        <p ng-show="userForm.zipcode.$error.minlength" class="help-block">Zipcode is too short.</p>
-                                        <p ng-show="userForm.zipcode.$error.maxlength" class="help-block">Zipcode is too long.</p>
+                                        <input type="text" name="zipcode" class="form-control" ng-model="zipcode"
+                                            ng-minlength="5" ng-maxlength="5" placeholder="95110" required>
+                                        <p ng-show="userForm.zipcode.$error.minlength" class="help-block">Zipcode is too
+                                            short.</p>
+                                        <p ng-show="userForm.zipcode.$error.maxlength" class="help-block">Zipcode is too
+                                            long.</p>
                                     </div>
                                 </div>
 
                                 <!-- EMAIL -->
                                 <div class="col-md-8 col-md-offset-2">
-                                    <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                                    <div class="form-group"
+                                        ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
                                         <label class="control-label">Email</label>
-                                        <input type="email" name="email" class="form-control" ng-model="email" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" placeholder="name@domain.com" required>
-                                        <p ng-show="userForm.email.$error.pattern" class="help-block">Email is not valid.</p>
+                                        <input type="email" name="email" class="form-control" ng-model="email"
+                                            ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+                                            placeholder="name@domain.com" required>
+                                        <p ng-show="userForm.email.$error.pattern" class="help-block">Email is not
+                                            valid.</p>
                                     </div>
                                 </div>
 
@@ -288,7 +323,8 @@
 
                         <div class="modal-footer">
                             <!-- Modal Box Buttons -->
-                            <input class="btn btn-primary" ng-click="addBook()" data-dismiss="modal" type="submit" ng-disabled="userForm.$invalid" value="Add" />
+                            <input class="btn btn-primary" ng-click="addBook()" data-dismiss="modal" type="submit"
+                                ng-disabled="userForm.$invalid" value="Add" />
                             <input class="btn btn-default" data-dismiss="modal" type="reset" value="Cancel" />
                         </div>
                     </form>
@@ -307,13 +343,10 @@
 
     <!-- Script to reset the Modal Box Form -->
     <script>
-        $('.modal').on('hidden.bs.modal', function() {
+        $('.modal').on('hidden.bs.modal', function () {
             $(this).find('form')[0].reset();
         });
     </script>
 
 </body>
-<!-- End of AngularJS Application Controller -->
-
 </html>
-<!-- AngularJS Application Ends -->
